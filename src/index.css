@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Kraft palette - base colors */
+    --kraft: 33 48% 56%;
+    --kraft-light: 33 54% 65%;
+    --kraft-dark: 33 43% 43%;
+    --text: 28 52% 19%;
+    --cream: 33 60% 96%;
+
+    /* Product colors */
+    --alumin: 172 35% 49%;
+    --alumin-100: 172 35% 59%;
+    --alumin-900: 172 35% 36%;
+
+    --bergim: 26 91% 54%;
+    --bergim-100: 26 100% 64%;
+    --bergim-900: 26 85% 42%;
+
+    --clareza: 48 100% 48%;
+    --clareza-100: 48 100% 63%;
+    --clareza-900: 48 100% 42%;
+
+    --sono: 283 42% 64%;
+    --sono-100: 283 50% 76%;
+    --sono-900: 283 35% 54%;
+
+    /* Semantic tokens */
+    --background: 33 60% 96%;
+    --foreground: 28 52% 19%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 28 52% 19%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 28 52% 19%;
+
+    --primary: 33 48% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 33 60% 96%;
+    --secondary-foreground: 28 52% 19%;
+
+    --muted: 33 30% 88%;
+    --muted-foreground: 28 30% 45%;
+
+    --accent: 172 35% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 33 30% 85%;
+    --input: 33 30% 85%;
+    --ring: 33 48% 56%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background-image: radial-gradient(
+        circle at 20% 50%,
+        hsl(var(--kraft-light) / 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        hsl(var(--kraft-light) / 0.08) 0%,
+        transparent 50%
+      );
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Kraft texture background */
+  .bg-kraft {
+    background-color: hsl(var(--kraft));
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239E713E' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Floating dots animation */
+  @keyframes float-dots {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+      opacity: 0.6;
+    }
+  }
+
+  .animate-float-dots {
+    animation: float-dots 6s ease-in-out infinite;
+  }
+
+  /* Ripple animation */
+  @keyframes ripple {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  .animate-ripple {
+    animation: ripple 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Fade in up */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+}
