@@ -13,5 +13,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [react()],
-  base: "Viviane_lemos_sprays",
 }));
