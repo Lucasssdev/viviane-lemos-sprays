@@ -96,13 +96,13 @@ All colors MUST be HSL.
 html,
 body {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-    width: 100%;
-    overflow-x: hidden;
   }
 
   /* Kraft texture background */
