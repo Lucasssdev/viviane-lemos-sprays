@@ -30,9 +30,11 @@ const products: Product[] = [
     colorClass: "bergim",
     crystal: "Calcita Laranja",
     tagline: "Energia fresca para mente ativa",
-    description: "Energia fresca, presença e clareza mental.",
+    description:
+      "Combate a ansiedade e desperta a mente, renova as forças e mantém respiração calma.",
     composition: "Óleos essenciais de bergamota, flor de laranjeira e alecrim",
-    usage: "Perfeito para momentos que pedem foco e energia renovada.",
+    usage:
+      "Perfeito para o dia a dia de quem busca equilíbrio e foco no trabalho e na rotina.",
     price: 70,
     image: productBergim,
   },
