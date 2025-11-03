@@ -2,48 +2,59 @@ import Model1 from "@/assets/model-1.jpg";
 import Model2 from "@/assets/model-2.jpg";
 import Model3 from "@/assets/model-3.jpg";
 
-const bgStyle = (src: string): React.CSSProperties => ({
-  backgroundImage: `url(${src})`,
-  backgroundSize: "contain",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-});
-
 export default function GridImages() {
+  const images = [Model1, Model2, Model3, Model2]; // ordem que você pediu
+
   return (
     <section
-      className="w-screen max-w-[100vw] left-1/2 right-1/2 -mx-[calc((100vw-100%)/2)] overflow-hidden"
-      style={{ maxWidth: "99.3vw", backgroundColor: "black" }}
+      // sangra 100% da viewport sem criar barras ou cortes
+      className="w-screen -mx-[calc(50vw-50%)]"
+      aria-label="Galeria de fotos"
     >
-      <div className="flex flex-col md:flex-row gap-0">
-        <div
-          className="hidden md:block md:w-1/4 h-[37vh] md:h-[38vh] lg:h-[38vh]"
-          style={bgStyle(Model1)}
-          role="img"
-          aria-label="Galeria Viviane — painel 1"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
+        {/* 1 */}
+        <div className="hidden md:block">
+          <img
+            src={images[0]}
+            alt="Galeria 1"
+            className="block w-full h-auto select-none"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 25vw"
+          />
+        </div>
 
-        <div
-          className="hidden md:block md:w-1/4 h-[38vh] md:h-[38vh] lg:h-[38vh]"
-          style={bgStyle(Model2)}
-          role="img"
-          aria-label="Galeria Viviane — painel 2"
-        />
+        {/* 2 - ÚNICA no mobile */}
+        <div className="block">
+          <img
+            src={images[1]}
+            alt="Galeria 2"
+            className="block w-full h-auto select-none"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 25vw"
+          />
+        </div>
 
-        <div
-          className="hidden md:block md:w-1/4 h-[38vh] md:h-[38vh] lg:h-[38vh]"
-          style={bgStyle(Model3)}
-          role="img"
-          aria-label="Galeria Viviane — painel 3"
-        />
+        {/* 3 */}
+        <div className="hidden md:block">
+          <img
+            src={images[2]}
+            alt="Galeria 3"
+            className="block w-full h-auto select-none"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 25vw"
+          />
+        </div>
 
-        {/* Painel 4 — ÚNICO no mobile, também visível no desktop */}
-        <div
-          className="block md:w-1/4 h-[46.3vh] md:h-[38vh] lg:h-[38vh]"
-          style={bgStyle(Model2)}
-          role="img"
-          aria-label="Galeria Viviane — painel 4"
-        />
+        {/* 4 */}
+        <div className="hidden md:block">
+          <img
+            src={images[3]}
+            alt="Galeria 4"
+            className="block w-full h-auto select-none"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 25vw"
+          />
+        </div>
       </div>
     </section>
   );

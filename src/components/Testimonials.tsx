@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Eduarda C.",
+    name: " Maria dos Reis",
     role: "Cliente",
     text: "O Alumin Sono me fez dormir de verdade. Quando o emocional aperta, uso e consigo relaxar. Já quero testar os outros.",
     rating: 5,
@@ -19,7 +19,7 @@ const testimonials = [
     color: "var(--bergim)",
   },
   {
-    name: "Viviane A.",
+    name: "Viurene",
     role: "Cliente",
     text: "Eu ficava tensa nas aulas. Comecei a usar o Alumin Clareza e está me ajudando a focar sem pesar.",
     rating: 5,
