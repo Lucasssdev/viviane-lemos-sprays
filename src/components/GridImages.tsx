@@ -6,11 +6,7 @@ export default function GridImages() {
   const images = [Model1, Model2, Model3, Model2]; // ordem que você pediu
 
   return (
-    <section
-      // sangra 100% da viewport sem criar barras ou cortes
-      className="w-screen -mx-[calc(50vw-50%)]"
-      aria-label="Galeria de fotos"
-    >
+    <section className="w-full overflow-hidden" aria-label="Galeria de fotos">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
         {/* 1 */}
         <div className="hidden md:block">
